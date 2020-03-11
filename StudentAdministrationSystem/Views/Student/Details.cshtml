@@ -1,0 +1,34 @@
+﻿@model StudentAdministrationSystem.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div> 
+        <h3>
+            @Html.DisplayNameFor(model => model.Name)
+        </h3>
+            @Html.DisplayFor(model => model.Name)
+        <h3>
+            @Html.DisplayNameFor(model => model.Email)
+        </h3>
+            @Html.DisplayFor(model => model.Email)
+        <ul>
+            @foreach(var subject in Model.Subjects)
+            {
+            <li>
+                @Html.DisplayFor(modelItem => subject.Name)
+            </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

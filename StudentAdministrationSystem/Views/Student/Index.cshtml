@@ -38,6 +38,9 @@
                 <td>
                     @Html.ActionLink("Vis oplysninger", "Details", new { id = item.StudentId }) |
                 </td>
+                <td>
+                    @Html.ActionLink("Tilføj Fag", "AddLecture", new { id = item.StudentId }) 
+                </td>
             </tr>
         }
 

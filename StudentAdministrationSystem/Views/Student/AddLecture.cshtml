@@ -1,0 +1,31 @@
+﻿@model StudentAdministrationSystem.Models.SubjectAndStudentsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddLecture</title>
+</head>
+<body>
+    <div>
+        <h3>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </h3>
+        <div>
+            <button onclick= @{
+                @Model.Student.AddSubject(Model.Subject)
+            }>
+                Add Subject
+            </button>
+        </div>
+        @Html.DisplayFor(model => model.Student.Name)
+        @Html.DropDownListFor(m => m.Subject, new SelectList(Model.Subjects), "Select Subject")
+        
+    </div>
+</body>
+</html>

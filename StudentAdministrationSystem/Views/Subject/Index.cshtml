@@ -1,0 +1,32 @@
+﻿@model IEnumerable<StudentAdministrationSystem.Models.Subject>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <p>
+            @Html.ActionLink("Opret nyt fag", "Create")
+        </p>
+        <h1>
+            Fag:
+        </h1>
+        <ul>
+            @foreach (var lecture in Model)
+            {
+                <li>
+                    @Html.DisplayFor(modelItem => lecture.Name)
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

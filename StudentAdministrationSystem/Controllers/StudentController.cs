@@ -26,6 +26,20 @@ namespace StudentAdministrationSystem.Controllers
         {
             StudentStorage.Add(student);
             return RedirectToAction("Index");
-        } 
+        }
+        
+        public ActionResult Details(int id)
+        {
+            Student student = StudentStorage.Get(id);
+            student.Subjects = new List<Subject> {new Subject { Name = "Temp Fag", Description = "det gode fag"}};
+            return View(student);
+        }
+
+        public ActionResult AddLecture(int id)
+        {
+            return View(new SubjectAndStudentsViewModel(StudentStorage.Get(id)));
+        }
+
+
     }
 }
